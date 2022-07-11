@@ -8,12 +8,9 @@
  *    user zoom.
  */
 html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -55,10 +52,8 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -231,12 +226,9 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-  margin: 0;
-  /* 3 */
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
 }
 
 /**
@@ -268,10 +260,8 @@ button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
 }
 
 /**
@@ -308,10 +298,8 @@ input {
  */
 input[type=checkbox],
 input[type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -330,9 +318,7 @@ input[type=number]::-webkit-outer-spin-button {
  *    (include `-moz` to future-proof).
  */
 input[type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */ /* 2 */
   box-sizing: border-box;
 }
 
@@ -360,10 +346,8 @@ fieldset {
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
 legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -1479,35 +1463,29 @@ body .interview td {
     font-size: 12px !important;
     font-weight: bold;
   }
-
   body .interview .loc-name {
     font-size: 12px !important;
     font-weight: bold;
   }
-
   body .interview .map {
     margin-left: 5px;
     line-height: 1;
   }
-
   body .interview .map a {
     width: auto;
     font-size: 10px !important;
     font-weight: bold;
     text-align: left;
   }
-
   body .interview .noborder a {
     font-size: 10px !important;
     font-weight: bold;
   }
-
   body .nwd .interview ul {
     display: block;
     text-align: left;
     line-height: 1.3;
   }
-
   body .nwd .interview ul li {
     display: inline;
   }
@@ -1531,20 +1509,16 @@ body .interview td {
     right: 20px !important;
     padding: 20px !important;
   }
-
   .modal-cont ul {
     margin-bottom: 15px !important;
   }
-
   .modal-cont p {
     font-size: 1.4rem !important;
     margin-bottom: 15px !important;
   }
-
   .timeSelect {
     width: 100% !important;
   }
-
   .modal-btn {
     margin-top: 20px !important;
   }
@@ -1801,7 +1775,6 @@ body:not(.front-page) .com-header__sub-pc {
   }
 }
 .sideFix__list__item a > span {
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
@@ -2233,7 +2206,6 @@ body:not(.front-page) .com-header__sub-pc {
 }
 @media screen and (min-width: 835px) {
   .sec__news .news__title span {
-    -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
   }
 }
@@ -3619,92 +3591,6 @@ body:not(.front-page) .com-header__sub-pc {
 /*--------------------
   common
 --------------------*/
-.lower-pay .pageHeader::before {
-  background-image: url(../img/pay/pageheader.jpg);
-  opacity: 0.58;
-}
-.lower-pay .requirementBtn {
-  margin-top: 100px;
-  margin-bottom: 120px;
-}
-@media screen and (max-width: 834px) {
-  .lower-pay .requirementBtn {
-    margin-top: 48px;
-    margin-bottom: 56px;
-    padding: 0 20px;
-  }
-}
-
-/*--------------------
-  intro
---------------------*/
-.pay__intro {
-  margin-top: 64px;
-  padding: 0 40px;
-}
-@media screen and (max-width: 834px) {
-  .pay__intro {
-    margin-top: 32px;
-    padding: 0 20px;
-  }
-}
-.pay__intro .copy {
-  font-size: 2.8rem;
-  font-weight: bold;
-  line-height: 1.66;
-}
-@media screen and (max-width: 834px) {
-  .pay__intro .copy {
-    font-size: 2rem;
-  }
-}
-.pay__intro .txt {
-  line-height: 2;
-  margin-top: 16px;
-}
-@media screen and (max-width: 834px) {
-  .pay__intro .txt {
-    margin-top: 10px;
-  }
-}
-
-/*--------------------
-  content
---------------------*/
-.pay__content {
-  margin-top: 80px;
-  padding: 0 40px;
-}
-@media screen and (max-width: 834px) {
-  .pay__content {
-    margin-top: 32px;
-    padding: 0 20px;
-  }
-}
-.pay__content__block {
-  margin-bottom: 80px;
-}
-@media screen and (max-width: 834px) {
-  .pay__content__block {
-    margin-bottom: 32px;
-  }
-}
-.pay__content__block:last-child {
-  margin-bottom: 0;
-}
-.pay__content__block .txt {
-  line-height: 2;
-  margin-top: 16px;
-}
-@media screen and (max-width: 834px) {
-  .pay__content__block .txt {
-    margin-top: 10px;
-  }
-}
-
-/*--------------------
-  common
---------------------*/
 .lower-staff .pageHeader::before {
   background-image: url(../img/staff/pageheader.jpg);
   opacity: 0.83;
@@ -4879,4 +4765,90 @@ body:not(.front-page) .com-header__sub-pc {
 
 /* ============================================
 // RECRUIT
-// ==========================================*//*# sourceMappingURL=style.css.map */
+// ==========================================*/
+/*--------------------
+  common
+--------------------*/
+.lower-pay .pageHeader::before {
+  background-image: url(../img/pay/pageheader.jpg);
+  opacity: 0.58;
+}
+.lower-pay .requirementBtn {
+  margin-top: 100px;
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 834px) {
+  .lower-pay .requirementBtn {
+    margin-top: 48px;
+    margin-bottom: 56px;
+    padding: 0 20px;
+  }
+}
+
+/*--------------------
+  intro
+--------------------*/
+.pay__intro {
+  margin-top: 64px;
+  padding: 0 40px;
+}
+@media screen and (max-width: 834px) {
+  .pay__intro {
+    margin-top: 32px;
+    padding: 0 20px;
+  }
+}
+.pay__intro .copy {
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 1.66;
+}
+@media screen and (max-width: 834px) {
+  .pay__intro .copy {
+    font-size: 2rem;
+  }
+}
+.pay__intro .txt {
+  line-height: 2;
+  margin-top: 16px;
+}
+@media screen and (max-width: 834px) {
+  .pay__intro .txt {
+    margin-top: 10px;
+  }
+}
+
+/*--------------------
+  content
+--------------------*/
+.pay__content {
+  margin-top: 80px;
+  padding: 0 40px;
+}
+@media screen and (max-width: 834px) {
+  .pay__content {
+    margin-top: 32px;
+    padding: 0 20px;
+  }
+}
+.pay__content__block {
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 834px) {
+  .pay__content__block {
+    margin-bottom: 32px;
+  }
+}
+.pay__content__block:last-child {
+  margin-bottom: 0;
+}
+.pay__content__block .txt {
+  line-height: 2;
+  margin-top: 16px;
+}
+@media screen and (max-width: 834px) {
+  .pay__content__block .txt {
+    margin-top: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

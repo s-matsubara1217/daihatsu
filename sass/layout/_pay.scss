@@ -1,10 +1,11 @@
 @charset "utf-8";
 @use '../foundation/mixins';
+// @include mixins.mq(sp)
 
 /*--------------------
   common
 --------------------*/
-.lower-pay{
+.lower-pay {
   .pageHeader{
     &::before{
       background-image: url(../img/pay/pageheader.jpg);
@@ -25,54 +26,126 @@
 /*--------------------
   intro
 --------------------*/
-.pay__intro{
-  margin-top: 64px;
-  padding: 0 40px;
-  @include mixins.mq(sp) {
-    margin-top: 32px;
-    padding: 0 20px;
+.pay__intro {
+  .lead {
+
   }
-  .copy{
-    font-size: 2.8rem;
-    font-weight: bold;
-    line-height: 1.66;
-    @include mixins.mq(sp) {
-      font-size: 2rem;
+  .table {
+    th {
+      .num {
+
+      }
+    }
+    td {
+      .table__txt {
+
+      }
+      .monthlyIncome {
+        &__num {
+
+        }
+      }
+      .daylyIncome {
+        &__num {
+
+        }
+      }
+      .table__annotation {
+
+      }
     }
   }
-  .txt{
-    line-height: 2;
-    margin-top: 16px;
-    @include mixins.mq(sp) {
-      margin-top: 10px;
+  .desc {
+
+  }
+}
+
+/*--------------------
+  point
+--------------------*/
+.pay__point {
+  .pay__point__content {
+    // 共通
+    .head {
+      .num {
+        small {
+
+        }
+        b {
+
+        }
+      }
+      .ttl {
+
+      }
+    }
+    body {
+      .desc {
+
+      }
+    }
+    .table {
+      &01 {
+        th {
+          small {
+
+          }
+        }
+        td {
+          .num {
+
+          }
+        }
+      }
+      &02 {
+        th {
+
+        }
+        td {
+
+        }
+      }
+    }
+
+    &01 {
+
+    }
+    &02 {
+
+    }
+    &03 {
+      .pay__point__welfareList {
+        &__item {
+          .term {
+
+          }
+          .desc {
+            .num {
+
+            }
+            .small {
+
+            }
+          }
+        }
+      }
+    }
+    &04 {
+
     }
   }
 }
 
 /*--------------------
-  content
+  illust-box
 --------------------*/
-.pay__content{
-  margin-top: 80px;
-  padding: 0 40px;
-  @include mixins.mq(sp) {
-    margin-top: 32px;
-    padding: 0 20px;
-  }
-  &__block{
-    margin-bottom: 80px;
-    @include mixins.mq(sp) {
-      margin-bottom: 32px;
+.pay__illust-box {
+  .wrap {
+    .illust {
+
     }
-    &:last-child{
-      margin-bottom: 0;
-    }
-    .txt{
-      line-height: 2;
-      margin-top: 16px;
-      @include mixins.mq(sp) {
-        margin-top: 10px;
-      }
+    .desc {
+
     }
   }
 }
