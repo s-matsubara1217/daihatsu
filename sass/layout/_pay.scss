@@ -305,6 +305,14 @@ $pay-beige: #f8ecdc;
             content: '';
             display: inline-block;
             background-image: url(../img/pay/ico_plus.png);
+            width: 18px;
+            height: 18px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            right: -4px;
+            top: 50%;
+            transform: translate(100%,-50%);
           }
 
           .term {
@@ -356,6 +364,9 @@ $pay-beige: #f8ecdc;
             background-color: #e39e7d;
             padding-top: 0;
             justify-content: center;
+            &:after {
+              content: none;
+            }
           }
         }
       }
