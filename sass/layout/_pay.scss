@@ -1,6 +1,12 @@
 @charset "utf-8";
-@use '../foundation/mixins';
+@use '../foundation/mixins' as *;
 // @include mixins.mq(sp)
+
+/*--------------------
+  variables
+--------------------*/
+$pay-orange: #E3594D;
+$pay-beige: #f8ecdc;
 
 /*--------------------
   common
@@ -15,10 +21,15 @@
   .requirementBtn{
     margin-top: 100px;
     margin-bottom: 120px;
-    @include mixins.mq(sp) {
+    @include mq(sp) {
       margin-top: 48px;
       margin-bottom: 56px;
       padding: 0 20px;
+    }
+  }
+  .table {
+    th {
+      font-weight: 400;
     }
   }
 }
@@ -27,36 +38,85 @@
   intro
 --------------------*/
 .pay__intro {
+  margin-top: 32px;
   .lead {
-
+    font-size: 2.8rem;
   }
-  .table {
-    th {
-      .num {
+  table {
+    width: 100%;
+    border: 2px solid $pay-orange;
+    margin-top: 72px;
 
+    tbody {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+    tr {
+      padding: 18px 24px;
+
+      &:first-child {
+        flex: 0 0 22.5%;
+        background-color: $pay-orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &:nth-child(2) {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+    th {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 400;
+      .num {
+        font-size: 5.2rem;
+        font-family: $eng2;
       }
     }
     td {
-      .table__txt {
+      display: block;
+      width: 100%;
 
+      .table__txt {
+        font-size: 1.8rem;
+      }
+      .incomeWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .monthlyIncome {
+        font-size: 1.8rem;
+        color: $pay-orange;
         &__num {
-
+          font-size: 5.7rem;
+          font-family: $eng2;
+          font-weight: 400;
+          display: inline-block;
+          margin: 0 4px;
         }
       }
-      .daylyIncome {
+      .dailyIncome {
+        color: $pay-orange;
+        font-size: 1.8rem;
+        margin-top: 18px;
         &__num {
-
+          font-size: 3rem;
+          display: inline-block;
+          margin: 0 4px;
         }
       }
       .table__annotation {
-
+        font-size: 1.4rem;
       }
     }
   }
   .desc {
-
+    font-size: 1.4rem;
+    margin-top: 28px;
   }
 }
 
@@ -66,66 +126,236 @@
 .pay__point {
   .pay__point__content {
     // 共通
+    margin-top: 100px;
+    &:first-child {
+      margin-top: 64px;
+    }
     .head {
-      .num {
-        small {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
 
+
+      .num {
+        width: 90px;
+        height: 90px;
+        background-color: #e39e7d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+        color: #fff;
+        font-family: $eng2;
+        font-weight: bold;
+        line-height: 1;
+
+        small {
+          margin-top: 8px;
         }
         b {
-
+          font-size: 5rem;
         }
       }
       .ttl {
-
+        font-size: 2.4rem;
+        margin-left: 24px;
       }
     }
-    body {
-      .desc {
-
+    .body {
+      margin-top: 40px;
+      > .desc {
+        margin-top: 40px;
       }
     }
     .table {
       &01 {
         th {
+          color: #fff;
+          background-color: $pay-orange;
+          height: 72px;
+          padding: 0 24px;
           small {
-
+            display: block;
           }
         }
         td {
-          .num {
+          background-color: $pay-beige;
+          margin-top: 6px;
+          display: block;
+          height: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $pay-orange;
 
+          .num {
+            font-size: 3.8rem;
+            font-family: $eng2;
+            font-weight: 400;
+            display: inline-block;
+            margin: 0 4px;
+          }
+          .txt {
+            display: inline-block;
+            margin-top: 12px;
           }
         }
       }
       &02 {
-        th {
+        width: 100%;
 
+        tr {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+        th,
+        td {
+          margin-left: 6px;
+          display: block;
+
+          &:first-child {
+            width: 24%;
+            margin-left: 0;
+          }
+          &:nth-child(2) {
+            width: 38%;
+          }
+          &:nth-child(3) {
+            width: 38%;
+          }
+        }
+
+        th {
+          background-color: $pay-orange;
+          color: #fff;
+          font-size: 2rem;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         td {
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+          background-color: $pay-beige;
+          margin-top: 6px;
+          color: $pay-orange;
 
+          &:first-child {
+            background-color: #f5d9cc;
+            color: $txt-color;
+          }
+
+          .num {
+            font-size: 3.2rem;
+            font-family: $eng2;
+            display: inline-block;
+            margin: 0 4px;
+          }
         }
       }
     }
 
     &01 {
-
+      .tableWrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .table {
+        margin-left: 6px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      .table01 {
+        flex: 0 0 33.3%;
+      }
     }
     &02 {
 
     }
     &03 {
       .pay__point__welfareList {
-        &__item {
-          .term {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
 
+        &__item {
+          width: 23%;
+          height: 145px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 16px 20px 0;
+          text-align: center;
+          color: #fff;
+          border-radius: 18px;
+          margin-left: 2.66%;
+          position: relative;
+
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/pay/ico_plus.png);
+          }
+
+          .term {
+            font-size: 2rem;
+            line-height: 1.6;
           }
           .desc {
+            position: relative;
+            margin-top: 4px;
+            padding-top: 8px;
+            width: 100%;
+            line-height: 1.6;
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 100%;
+              background-color: #fff;
+              height: 1px;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
             .num {
-
+              font-size: 2.8rem;
+              display: inline-block;
+              margin: 0 4px;
+              margin-top: 4px;
+              line-height: 1;
             }
-            .small {
-
+            small {
+              display: block;
+              font-size: 1.1rem;
+              line-height: 1.6;
             }
+          }
+
+          &:first-child {
+            background-color: #53b2af;
+            margin-left: 0;
+          }
+          &:nth-child(2) {
+            background-color: #80e2b6;
+          }
+          &:nth-child(3) {
+            background-color: #d0cf53;
+          }
+          &:nth-child(4) {
+            background-color: #e39e7d;
+            padding-top: 0;
+            justify-content: center;
           }
         }
       }
@@ -140,12 +370,24 @@
   illust-box
 --------------------*/
 .pay__illust-box {
-  .wrap {
-    .illust {
+  margin-top: 110px;
 
+  .wrap {
+    background-color: $pay-beige;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 48px 5% 0;
+    border-radius: 10px;
+
+    .illust {
+      flex: 0 0 19.1%;
+      max-width: 191px;
+      margin-bottom: -6px;
+      margin-right: 3%;
     }
     .desc {
-
+      flex: 1 1 auto;
     }
   }
 }
