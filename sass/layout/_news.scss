@@ -1,0 +1,165 @@
+@charset "utf-8";
+@use '../foundation/mixins';
+
+/*--------------------
+  common
+--------------------*/
+.lower-news{
+  .pageHeader{
+    &::before{
+      background-image: url(../img/news/pageheader.jpg);
+      opacity: 0.65;
+    }
+  }
+  .toTopBtn{
+    margin-top: 100px;
+    margin-bottom: 120px;
+    @include mixins.mq(sp) {
+      margin-top: 48px;
+      margin-bottom: 56px;
+      padding: 0 20px;
+    }
+  }
+}
+
+/*--------------------
+  newslist
+--------------------*/
+.news__list{
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    padding: 0 20px;
+  }
+  &__list{
+    margin-top: 40px;
+    @include mixins.mq(sp) {
+      margin-top: 10px;
+    }
+    &__item{
+      border-bottom: 1px solid #C4C4C4;
+      a{
+        display: flex;
+        padding: 20px 0;
+        @include mixins.mq(sp) {
+          display: block;
+          padding: 14px 0;
+        }
+      }
+      .date{
+        flex: 0 0 auto;
+        margin-right: 24px;
+      }
+      .ttl{
+        flex: 1 1 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  &__pager{
+    margin-top: 48px;
+    @include mixins.mq(sp) {
+      margin-top: 32px;
+    }
+    ul{
+      text-align: center;
+      font-size: 0;
+      li{
+        display: inline-block;
+        margin: 3px;
+        @include mixins.mq(sp) {
+          margin: 2px;
+        }
+        a,em{
+          display: block;
+          font-size: 1.8rem;
+          font-style: normal;
+          padding: 0 10px;
+          border: 1px solid;
+          @include mixins.mq(sp) {
+            font-size: 1.4rem;
+            padding: 0 7px;
+          }
+        }
+        &.current{
+          a,em{
+            color: #ffffff;
+            background: mixins.$primary-color;
+            border-color: mixins.$primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+  newsdetail
+--------------------*/
+.news__detail{
+  margin-top: 40px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  .ttl{
+    position: relative;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.66;
+    padding-bottom: 16px;
+    @include mixins.mq(sp) {
+      font-size: 1.8rem;
+      padding-bottom: 12px;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 6px;
+      background: #d9d9d9;
+      @include mixins.mq(sp) {
+        height: 4px;
+      }
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      height: 6px;
+      background: mixins.$primary-color;
+      @include mixins.mq(sp) {
+        width: 100px;
+        height: 4px;
+      }
+    }
+  }
+  .date{
+    font-size: 1.8rem;
+    margin-top: 10px;
+    @include mixins.mq(sp) {
+      font-size: 1.6rem;
+    }
+  }
+  .body{
+    margin-top: 24px;
+    @include mixins.mq(sp) {
+      margin-top: 16px;
+    }
+  }
+  .txt{
+    &:not(:first-child){
+      margin-top: 80px;
+      @include mixins.mq(sp) {
+        margin-top: 40px;
+      }
+    }
+  }
+}

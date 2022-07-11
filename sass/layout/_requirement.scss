@@ -1,0 +1,115 @@
+@charset "utf-8";
+@use '../foundation/mixins';
+
+/*--------------------
+  common
+--------------------*/
+.lower-requirement{
+  .pageHeader{
+    &::before{
+      background-image: url(../img/requirement/pageheader.jpg);
+      opacity: 0.65;
+    }
+  }
+}
+
+/*--------------------
+  requirement
+--------------------*/
+.requirement__body{
+  margin-top: 40px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  &__copy{
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.66;
+    margin-bottom: 32px;
+    @include mixins.mq(sp) {
+      font-size: 1.9rem;
+      margin-bottom: 24px;
+    }
+    span{
+      background:linear-gradient(transparent 60%, #fff3be 60%);
+    }
+  }
+  &__imgs{
+    display: flex;
+    justify-content: center;
+    &__item{
+      flex: 0 0 32%;
+      max-width: 320px;
+      margin: 0 1%;
+      @include mixins.mq(sp) {
+        flex: 48%;
+        &:last-child{
+          display: none;
+        }
+      }
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  &__txt{
+    margin-top: 32px;
+    @include mixins.mq(sp) {
+      margin-top: 16px;
+    }
+  }
+  &__btn{
+    margin-top: 48px;
+    @include mixins.mq(sp) {
+      margin-top: 20px;
+    }
+  }
+}
+
+/*--------------------
+  requirement
+--------------------*/
+.requirement__data{
+  margin-top: 70px;
+  padding: 0 40px 40px;
+  @include mixins.mq(sp) {
+    margin-top: 32px;
+    padding: 0 20px 20px;
+  }
+  &__list{
+    border: 1px solid;
+    &__item{
+      display: flex;
+      border-bottom: 1px solid;
+      &:last-child{
+        border-bottom: none;
+      }
+      @include mixins.mq(sp) {
+        display: block;
+      }
+      .hd,
+      .txt{
+        padding: 12px 20px;
+      }
+      .hd{
+        flex: 0 0 20%;
+        max-width: 200px;
+        border-right: 1px solid;
+        @include mixins.mq(sp) {
+          max-width: inherit;
+          background: #f2f2f2;
+          border-right: none;
+          border-bottom: 1px solid;
+        }
+      }
+      .txt{
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

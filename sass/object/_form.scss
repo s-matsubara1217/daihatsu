@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+@use '../foundation/mixins';
+
+/*------------------------------
+form base setting
+------------------------------*/
+body.iPhone select,
+body.iPhone input,
+body.iPhone textarea {
+	font-size: 16px !important;
+}
+
+body{
+
+	input,
+	button,
+	textarea,
+	select {
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		text-indent: 0.01px;
+		line-height: inherit;
+		text-overflow: '';
+	}
+
+	input::-ms-expand,
+	button::-ms-expand,
+	textarea::-ms-expand,
+	select::-ms-expand {
+		display: none;
+	}
+
+	input::-ms-reveal,
+	button::-ms-reveal,
+	textarea::-ms-reveal,
+	select::-ms-reveal {
+		visibility: hidden;
+	}
+
+	input::-ms-clear,
+	button::-ms-clear,
+	textarea::-ms-clear,
+	select::-ms-clear {
+		visibility: hidden;
+	}
+
+	input[type="text"],
+	input[type="submit"],
+	input[type="search"],
+	input[type="button"],
+	select,
+	textarea {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		border: none;
+		outline: none;
+		transition: all 0.2s;
+	}
+
+	input[type="search"] {
+		cursor: auto;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-appearance: textfield;
+		-webkit-appearance: none;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	input[type="search"]:focus {
+		outline-offset: -2px;
+	}
+
+	input[type="search"]::-webkit-search-decoration {
+		display: none;
+	}
+
+	select,
+	search,
+	input {
+		width: 100%;
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		cursor: pointer;
+		background: transparent;
+	}
+
+	select,
+	input[type="text"],
+	input[type="search"]{
+		@include mixins.mq(sp) {
+			font-size: 1.6rem;
+		}
+	}
+
+	select{
+		padding-right: 48px !important;
+	}
+
+	input[type=checkbox] {
+		display: none;
+	}
+
+	input[type=checkbox] + label {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		position: relative;
+		cursor: pointer;
+		line-height: 1.5;
+		padding-left: 18px;
+		transition: all 0.2s;
+		@include mixins.mq(sp) {
+			padding-left: 18px;
+		}
+	}
+
+	input[type=checkbox] + label:before, input[type=checkbox] + label:after {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		content: "";
+		position: absolute;
+		transition: all 0.2s;
+	}
+
+	input[type=checkbox] + label:before {
+		background: #ffffff;
+		width: 13px;
+		height: 13px;
+		left: 0;
+		top: 2px;
+		z-index: 0;
+		border: 1px solid mixins.$txt-color;
+		border-radius: 2px;
+		@include mixins.mq(sp) {
+			width: 13px;
+			height: 13px;
+		}
+	}
+
+	input[type=checkbox] + label::after {
+		top: 2px;
+		left: 4px;
+		z-index: 2;
+		opacity: 0;
+		width: 4px;
+		height: 8px;
+		color: #ffffff;
+		border-bottom: 2px solid;
+		border-right: 2px solid;
+		-webkit-transform: rotate(-180deg);
+		transform: rotate(-180deg);
+		box-sizing: content-box;
+	}
+
+	input[type=checkbox] + label a:link,
+	input[type=checkbox] + label a:visited {
+		color: #222;
+	}
+
+	input[type=checkbox]:checked + label:before {
+		background: mixins.$primary-color;
+		border-color: mixins.$primary-color;
+	}
+
+	input[type=checkbox]:checked + label:after {
+		-webkit-transform: rotate(40deg);
+		transform: rotate(40deg);
+		opacity: 1;
+	}
+
+}
+
+
+/*------------------------------
+	form custom setting
+------------------------------*/

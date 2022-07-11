@@ -1,0 +1,591 @@
+@charset "utf-8";
+
+@use '../foundation/mixins';
+
+/* ============================================
+// MODULES
+// ==========================================*/
+
+/*--------------------
+	pageHeader
+--------------------*/
+.pageHeader{
+	position: relative;
+	z-index: 1;
+	background: #000;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.8;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	&__inner{
+		max-width: 1000px;
+		height: 380px;
+		display: flex;
+		align-items: center;
+		padding-left: 90px;
+		@include mixins.mq(sp) {
+			height: 160px;
+			padding: 0 32px;
+		}
+	}
+	.titleArea{
+		color: #ffffff;
+		letter-spacing: 0.3em;
+		@include mixins.mq(sp) {
+			letter-spacing: 0.2em;
+		}
+		.sub{
+			display: block;
+			font-family: mixins.$eng2;
+			font-size: 1.6rem;
+			margin-bottom: 4px;
+		}
+		.main{
+			font-size: 2.8rem;
+			font-weight: bold;
+			line-height: 1.5;
+			@include mixins.mq(sp) {
+				font-size: 2.2rem;
+			}
+			&::after{
+				content: '';
+				display: block;
+				width: 95px;
+				height: 2px;
+				margin-top: 14px;
+				background: #ffffff;
+				@include mixins.mq(sp) {
+					width: 48px;
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------
+	breadcrumb
+--------------------*/
+.breadcrumb {
+	&__list{
+		position: relative;
+    z-index: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+		padding: 12px 40px;
+		@include mixins.mq(sp) {
+			padding: 6px 10px;
+		}
+		&__item{
+			display: inline;
+			font-size: 1.3rem;
+			color: mixins.$txt-color;
+			margin: 0 2px;
+			@include mixins.mq(sp) {
+				font-size: 1.1rem;
+			}
+			&::after{
+				content: "\003e";
+				margin-left: 7px;
+			}
+			&:last-child{
+				&::after{
+					display: none;
+				}
+			}
+			a{
+				color: mixins.$txt-color;
+				&:hover{
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------
+	commonTitle
+--------------------*/
+.commonTitle01{
+	position: relative;
+	text-align: center;
+	font-size: 3.5rem;
+	font-weight: bold;
+	@include mixins.mq(sp) {
+		font-size: 2.2rem;
+	}
+	&::after{
+		content: '';
+		display: block;
+		height: 12px;
+		margin-top: 12px;
+		background: url(../img/common/stripe_title01.png) center center /contain no-repeat;
+		@include mixins.mq(sp) {
+			height: 10px;
+			margin-top: 10px;
+		}
+	}
+}
+.commonTitle02{
+	display: flex;
+	align-items: flex-start;
+	font-size: 2.8rem;
+	font-weight: bold;
+	line-height: 1.66;
+	@include mixins.mq(sp) {
+		font-size: 2rem;
+	}
+	&::before{
+		content: '';
+		flex: 0 0 18px;
+		width: 18px;
+		height: 39px;
+		margin-top: 3px;
+		margin-right: 16px;
+		background: url(../img/common/stripe_title02.png) center center /contain no-repeat;
+		@include mixins.mq(sp) {
+			width: 13px;
+			height: 28px;
+			margin-top: 2px;
+			margin-right: 10px;
+		}
+	}
+}
+
+/*--------------------
+	commonBtn
+--------------------*/
+.commonBtn01{
+	a{
+		position: relative;
+		display: block;
+		width: 400px;
+		text-align: center;
+		font-size: 2rem;
+		color: #ffffff;
+		margin: 0 auto;
+		padding: 18px;
+		background: #000;
+		border-radius: 10px;
+		transition: background 0.24s;
+		@include mixins.mq(sp) {
+			max-width: 100%;
+			font-size: 1.6rem;
+			padding: 15px;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 40px;
+			height: 2px;
+			background: #ffffff;
+			transform: translate(0,-50%);
+			@include mixins.mq(sp) {
+				width: 20px;
+			}
+		}
+		@include mixins.mq(pc) {
+			&:hover{
+				background: mixins.$primary-color;
+			}
+		}
+	}
+
+	// colors
+	&.-primary {
+		a{
+			background: mixins.$primary-color;
+			@include mixins.mq(pc) {
+			  &:hover{
+				background: lighten(mixins.$primary-color , 5%);
+			  }
+			}
+		}
+	}
+	&.-fifth {
+		a{
+			background: mixins.$fifth-color;
+			@include mixins.mq(pc) {
+			  &:hover{
+				background: lighten(mixins.$fifth-color , 5%);
+			  }
+			}
+		}
+	}
+	&.-sixth {
+		a{
+			background: mixins.$sixth-color;
+			@include mixins.mq(pc) {
+			  &:hover{
+				background: lighten(mixins.$sixth-color , 5%);
+			  }
+			}
+		}
+	}
+}
+.commonBtn02{
+	a{
+		position: relative;
+		display: block;
+		width: 240px;
+		text-align: center;
+		font-size: 1.6rem;
+		font-weight: bold;
+		margin: 0 auto;
+		padding: 16px 24px 16px 16px;
+		border: 2px solid mixins.$txt-color;
+		transition: background 0.24s,border 0.24s;
+		@include mixins.mq(sp) {
+			max-width: 100%;
+			font-size: 1.4rem;
+			padding: 11px 24px 11px 16px;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			right: 24px;
+			top: 50%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 7px 0 7px 7px;
+			border-color: transparent transparent transparent mixins.$txt-color;
+			transform: translate(0,-50%);
+			transition: border 0.24s;
+		}
+		@include mixins.mq(pc) {
+			&:hover{
+				color: #ffffff;
+				background: mixins.$primary-color;
+				border-color: mixins.$primary-color;
+				&::after{
+					border-color: transparent transparent transparent #ffffff;
+				}
+			}
+		}
+	}
+	&.-white{
+		a{
+			color: #ffffff;
+			border-color: #ffffff;
+			&::after{
+				border-color: transparent transparent transparent #ffffff;
+			}
+			@include mixins.mq(pc) {
+				&:hover{
+					border-color: mixins.$primary-color;
+				}
+			}
+		}
+	}
+}
+
+
+
+/*--------------------
+	job_count_pager
+--------------------*/
+body{
+	.job_count_pager {
+		display: flex;
+	}
+	.job_count_pager.contents_top {
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		-webkit-align-items: center;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+	.job_count_pager.contents_bottom{
+		display: block;
+		// margin: 80px 0;
+		padding: 80px 0 0;
+		@include mixins.mq(sp) {
+			padding: 40px 0 0;
+		}
+		.pagination{
+			padding-top: 30px;
+			@include mixins.mq(sp) {
+				padding-top: 20px;
+			}
+			ul{
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				li{
+					text-align: center;
+					font-size: 1.4rem;
+					a,em{
+						display: block;
+						width: 40px;
+						height: 40px;
+						font-weight: bold;
+						font-style: normal;
+						line-height: 40px;
+						overflow: hidden;
+						margin: 0 4px;
+						border-radius: 50%;
+						// margin: 0 2px;
+						// border-radius: 3px;
+						background: #ffffff;
+					}
+					a:hover,
+					em{
+						color: #ffffff;
+						background: mixins.$primary-color;
+					}
+				}
+				.number{
+					display: none;
+					@include mixins.mq(pc) {
+						display: inline-block;
+					}
+				}
+				.number.current{
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------
+  briefing
+--------------------*/
+.sec__briefing{
+  margin-top: 64px;
+  padding: 88px 40px 0;
+  background: url(../img/common/stripe_bg02.png) center top repeat-x;
+  @include mixins.mq(sp) {
+    margin-top: 20px;
+    padding: 36px 20px 0;
+    background-size: auto 300px;
+  }
+  .briefing{
+    &__inner{
+      padding: 50px 100px 70px;
+      background: #ffffff;
+      border-radius: 20px;
+      @include mixins.mq(sp) {
+        padding: 24px 20px 0;
+        border-radius: 10px;
+      }
+    }
+    &__title{
+      b{
+        color: #EB4C44;
+      }
+    }
+    &__btns{
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      @include mixins.mq(sp) {
+        display: block;
+      }
+      &__item{
+        margin: 0 8px;
+        @include mixins.mq(sp) {
+          margin: 0 0 10px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &__reserve{
+      margin-top: 40px;
+      @include mixins.mq(sp) {
+        margin-top: 24px;
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .reserve{
+        &__hd{
+          text-align: center;
+          font-size: 1.8rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+          @include mixins.mq(sp) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+	reserve_table
+--------------------*/
+body .interview {
+  position: relative;
+  color: #000;
+  background-color: white;
+  border-spacing: 0px;
+  width: 100%;
+}
+body .interview th,
+body .interview td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+body .interview th {
+  width: 40%;
+  background-color: #fff;
+}
+body .interview td {
+  text-align: center;
+}
+body .interview .briefing_year td,
+body .interview .briefing_day td,
+body .interview .briefing_week td,
+body .interview .interview_place_list td {
+  border-left: 1px solid #ddd;
+}
+body .interview .briefing_year td a,
+body .interview .briefing_day td a,
+body .interview .briefing_week td a,
+body .interview .interview_place_list td a {
+  color: #000;
+  font-weight: bold;
+}
+body .interview .interview_place_list td a {
+  color: #fe0000;
+  text-decoration: underline !important;
+}
+body .interview .briefing_year {
+  font-weight: bold;
+}
+body .interview .bg-b {
+  background-color: #e6edff;
+}
+body .interview .bg-r {
+  background-color: #ffeded;
+}
+body .interview .loc-name {
+  flex: 1;
+	text-align: left;
+  font-size: 14px;
+}
+body .interview .map a {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: right;
+  color: #000;
+  text-decoration: underline;
+}
+body .interview .noborder th,
+body .interview .noborder td {
+  border: none;
+}
+body .interview .noborder td:first-of-type {
+  text-align: left;
+}
+body .interview .noborder td:last-child {
+  text-align: right;
+}
+body .interview .noborder a {
+  font-size: 14px;
+	color: mixins.$primary-color;
+}
+body .nwd .interview ul {
+  display: flex;
+  display: -webkit-flex;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 480px) {
+  body .interview th,
+  body .interview td {
+    padding: 5px 3px;
+    font-size: 12px !important;
+    font-weight: bold;
+  }
+  body .interview .loc-name {
+    font-size: 12px !important;
+    font-weight: bold;
+  }
+  body .interview .map {
+    margin-left: 5px;
+    line-height: 1;
+  }
+  body .interview .map a {
+    width: auto;
+    font-size: 10px !important;
+    font-weight: bold;
+    text-align: left;
+  }
+  body .interview .noborder a {
+    font-size: 10px !important;
+    font-weight: bold;
+  }
+  body .nwd .interview ul {
+    display: block;
+		text-align: left;
+    line-height: 1.3;
+  }
+  body .nwd .interview ul li {
+    display: inline;
+  }
+}
+@media screen and (max-width: 834px) {
+  body .bif-head {
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------
+	reserve_modal
+--------------------*/
+.timeSelect a {
+  text-decoration: underline !important;
+}
+@media screen and (max-width: 834px) {
+  .modal-cont {
+    width: auto !important;
+    left: 20px !important;
+    right: 20px !important;
+    padding: 20px !important;
+  }
+  .modal-cont ul {
+    margin-bottom: 15px !important;
+  }
+  .modal-cont p {
+    font-size: 1.4rem !important;
+    margin-bottom: 15px !important;
+  }
+  .timeSelect {
+    width: 100% !important;
+  }
+  .modal-btn {
+    margin-top: 20px !important;
+  }
+}
+
+#screen-mdl{
+	z-index: 100;
+}
+.modal-cont{
+	z-index: 110;
+	.timeSelect{
+		border-collapse: separate;
+		border-spacing: 2px;
+	}
+}

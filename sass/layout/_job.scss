@@ -1,0 +1,298 @@
+@charset "utf-8";
+@use '../foundation/mixins';
+
+/*--------------------
+  common
+--------------------*/
+.lower-job{
+  .pageHeader{
+    &::before{
+      background-image: url(../img/job/pageheader.jpg);
+      opacity: 0.65;
+    }
+  }
+  .requirementBtn{
+    margin-top: 100px;
+    margin-bottom: 120px;
+    @include mixins.mq(sp) {
+      margin-top: 48px;
+      margin-bottom: 56px;
+      padding: 0 20px;
+    }
+  }
+}
+
+/*--------------------
+  intro
+--------------------*/
+.job__intro{
+  margin-top: 64px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  .txt{
+    line-height: 2;
+    margin-top: 16px;
+    @include mixins.mq(sp) {
+      margin-top: 10px;
+    }
+  }
+}
+
+/*--------------------
+  process
+--------------------*/
+.job__process{
+  margin-top: 80px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 48px;
+    padding: 0 20px;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mixins.mq(sp) {
+      display: block;
+    }
+    &__item{
+      position: relative;
+      flex: 0 0 48%;
+      max-width: 480px;
+      background: #000000;
+      margin-top: 64px;
+      padding: 15px 0 40px;
+      @include mixins.mq(sp) {
+        margin-top: 40px;
+        padding: 10px 0 16px;
+      }
+      @include mixins.mq(pc) {
+        &:nth-child(-n+2){
+          margin-top: 0;
+        }
+      }
+      @include mixins.mq(sp) {
+        &:first-child{
+          margin-top: 0;
+        }
+      }
+      .num{
+        position: absolute;
+        left: 24px;
+        top: -24px;
+        z-index: 3;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: mixins.$eng2;
+        font-weight: bold;
+        color: #ffffff;
+        line-height: 1;
+        padding-top: 5px;
+        background: mixins.$primary-color;
+        @include mixins.mq(sp) {
+          left: 10px;
+          top: -20px;
+          width: 70px;
+          height: 70px;
+        }
+        small{
+          font-size: 1.6rem;
+          margin-bottom: 5px;
+          @include mixins.mq(sp) {
+            font-size: 1.1rem;
+          }
+        }
+        b{
+          font-size: 4.8rem;
+          @include mixins.mq(sp) {
+            font-size: 3rem;
+          }
+        }
+      }
+      .img{
+        @include mixins.keepAspect(78.63%);
+      }
+      .body{
+        position: relative;
+        z-index: 2;
+        background: #ffffff;
+        margin: -40px 20px 0;
+        padding: 32px;
+        @include mixins.mq(sp) {
+          margin: -24px 16px 0;
+          padding: 20px;
+        }
+        .hd{
+          font-size: 2.4rem;
+          font-weight: bold;
+          @include mixins.mq(sp) {
+            font-size: 2rem;
+          }
+        }
+        .txt{
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+  point
+--------------------*/
+.job__point{
+  margin-top: 80px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  &__title{
+    b{
+      color: mixins.$secondary-color;
+    }
+  }
+  &__list{
+    margin-top: 40px;
+    @include mixins.mq(sp) {
+      margin-top: 20px;
+    }
+    &__item{
+      margin-bottom: 30px;
+      padding: 40px 64px 48px;
+      border: 1px solid #707070;
+      border-radius: 18px;
+      @include mixins.mq(sp) {
+        margin-bottom: 16px;
+        padding: 24px;
+        border-radius: 10px;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .headArea{
+        display: flex;
+        align-items: flex-start;
+        .num{
+          flex: 0 0 90px;
+          width: 90px;
+          height: 90px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-family: mixins.$eng2;
+          font-weight: bold;
+          color: #ffffff;
+          line-height: 1;
+          margin-right: 16px;
+          padding-top: 8px;
+          background: mixins.$secondary-color;
+          border-radius: 50%;
+          @include mixins.mq(sp) {
+            flex: 0 0 63px;
+            width: 63px;
+            height: 63px;
+            margin-right: 10px;
+            padding-top: 6px;
+          }
+          small{
+            font-size: 1.6rem;
+            @include mixins.mq(sp) {
+              font-size: 1.1rem;
+            }
+          }
+          b{
+            font-size: 4.8rem;
+            @include mixins.mq(sp) {
+              font-size: 3rem;
+            }
+          }
+        }
+        .hd{
+          font-size: 2.4rem;
+          font-weight: bold;
+          line-height: 1.6;
+          margin-top: 26px;
+          @include mixins.mq(sp) {
+            font-size: 2rem;
+            margin-top: 15px;
+          }
+        }
+      }
+      .txt{
+        margin-top: 20px;
+        @include mixins.mq(sp) {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+  interview
+--------------------*/
+.job__interview{
+  margin-top: 80px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  &__title{
+    b{
+      color: #EBA2A2;
+    }
+  }
+  &__list{
+    margin-top: 40px;
+    @include mixins.mq(sp) {
+      margin-top: 24px;
+    }
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 56px;
+      @include mixins.mq(sp) {
+        display: block;
+        margin-bottom: 32px;
+      }
+      @include mixins.mq(pc) {
+        &:nth-child(odd){
+          flex-direction: row-reverse;
+          .img{
+            margin-left: 40px;
+          }
+        }
+        &:nth-child(even){
+          .img{
+            margin-right: 40px;
+          }
+        }
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .img{
+        flex: 0 0 45%;
+        max-width: 450px;
+        @include mixins.mq(sp) {
+          width: 90%;
+          margin: 0 auto 20px;
+        }
+      }
+      .body{
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

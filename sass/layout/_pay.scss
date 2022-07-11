@@ -1,0 +1,78 @@
+@charset "utf-8";
+@use '../foundation/mixins';
+
+/*--------------------
+  common
+--------------------*/
+.lower-pay{
+  .pageHeader{
+    &::before{
+      background-image: url(../img/pay/pageheader.jpg);
+      opacity: 0.58;
+    }
+  }
+  .requirementBtn{
+    margin-top: 100px;
+    margin-bottom: 120px;
+    @include mixins.mq(sp) {
+      margin-top: 48px;
+      margin-bottom: 56px;
+      padding: 0 20px;
+    }
+  }
+}
+
+/*--------------------
+  intro
+--------------------*/
+.pay__intro{
+  margin-top: 64px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 32px;
+    padding: 0 20px;
+  }
+  .copy{
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.66;
+    @include mixins.mq(sp) {
+      font-size: 2rem;
+    }
+  }
+  .txt{
+    line-height: 2;
+    margin-top: 16px;
+    @include mixins.mq(sp) {
+      margin-top: 10px;
+    }
+  }
+}
+
+/*--------------------
+  content
+--------------------*/
+.pay__content{
+  margin-top: 80px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 32px;
+    padding: 0 20px;
+  }
+  &__block{
+    margin-bottom: 80px;
+    @include mixins.mq(sp) {
+      margin-bottom: 32px;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .txt{
+      line-height: 2;
+      margin-top: 16px;
+      @include mixins.mq(sp) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

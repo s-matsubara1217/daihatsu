@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+//foundation
+// @use 'foundation/mixins';
+@use 'foundation/normalize';
+@use 'foundation/base';
+
+//object
+@use 'object/form';
+@use 'object/module';
+
+//layout: ;
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/index';
+@use 'layout/job';
+@use 'layout/support';
+@use 'layout/pay';
+@use 'layout/staff';
+@use 'layout/news';
+@use 'layout/workplace';
+@use 'layout/faq';
+@use 'layout/briefing';
+@use 'layout/requirement';
+@use 'layout/recruit';

@@ -1,0 +1,135 @@
+@charset "utf-8";
+@use '../foundation/mixins';
+
+/* ============================================
+// CONTACT
+// ==========================================*/
+.sec__contact{
+  color: #ffffff;
+  margin-top: 80px;
+  padding: 80px 40px;
+  // background: #1D1D1D;
+  background: #5E9ECE;
+  @include mixins.mq(sp) {
+    margin-top: 48px;
+    padding: 40px 24px 48px;
+  }
+  .contact{
+    &__title{
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: bold;
+      @include mixins.mq(sp) {
+        font-size: 2.2rem;
+      }
+    }
+    &__body{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      @include mixins.mq(sp) {
+        display: block;
+        margin-top: 24px;
+      }
+      @include mixins.mq(pc) {
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          width: 1px;
+          background: #ffffff;
+        }
+      }
+    }
+    &__item{
+      flex: 0 0 50%;
+      display: flex;
+      justify-content: center;
+      @include mixins.mq(sp) {
+        display: block;
+        margin-bottom: 32px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      .hd{
+        font-size: 1.9rem;
+        font-weight: bold;
+        @include mixins.mq(sp) {
+          font-size: 1.5rem;
+        }
+      }
+      .tel{
+        font-size: 4rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        @include mixins.mq(sp) {
+          font-size: 3rem;
+          margin-top: -3px;
+          margin-bottom: -8px;
+        }
+        a{
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+/* ============================================
+// FOOTER
+// ==========================================*/
+.footer{
+  padding: 64px 40px;
+  @include mixins.mq(sp) {
+    padding: 40px 20px;
+  }
+  &__logo{
+    text-align: center;
+    a{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include mixins.mq(sp) {
+        display: inline-block;
+      }
+    }
+    span{
+      font-weight: bold;
+      margin-left: 20px;
+      @include mixins.mq(sp) {
+        display: block;
+        font-size: 1.6rem;
+        margin: 12px 0 0;
+      }
+    }
+  }
+  &__nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    &__item{
+      line-height: 1.5;
+      padding: 0 16px;
+      border-right: 1px solid;
+      @include mixins.mq(sp) {
+        font-size: 1.2rem;
+        padding: 0 12px;
+      }
+      &:last-child{
+        border-right: none;
+      }
+    }
+  }
+  &__copyright{
+    text-align: center;
+    margin-top: 40px;
+    @include mixins.mq(sp) {
+      font-size: 1.2rem;
+      margin-top: 32px;
+    }
+  }
+}

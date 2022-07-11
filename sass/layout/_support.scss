@@ -1,0 +1,210 @@
+@charset "utf-8";
+@use '../foundation/mixins';
+
+/*--------------------
+  common
+--------------------*/
+.lower-support{
+  .pageHeader{
+    &::before{
+      background-image: url(../img/support/pageheader.jpg);
+      opacity: 0.83;
+    }
+  }
+  .requirementBtn{
+    margin-top: 100px;
+    margin-bottom: 120px;
+    @include mixins.mq(sp) {
+      margin-top: 48px;
+      margin-bottom: 56px;
+      padding: 0 20px;
+    }
+  }
+}
+
+/*--------------------
+  intro
+--------------------*/
+.support__intro{
+  margin-top: 64px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  .txt{
+    line-height: 2;
+  }
+}
+
+/*--------------------
+  step
+--------------------*/
+.support__step{
+  margin-top: 80px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  &__title{
+    b{
+      color: #84D38E;
+    }
+  }
+  &__list{
+    margin-top: 32px;
+    @include mixins.mq(sp) {
+      margin-top: 20px;
+    }
+    &__item{
+      position: relative;
+      margin-bottom: 64px;
+      padding: 10px;
+      background: rgb(22,152,29);
+      background: linear-gradient(90deg, rgba(22,152,29,1) 0%, rgba(22,152,29,1) 50%, rgba(132,211,142,1) 50%, rgba(132,211,142,1) 100%);
+      @include mixins.mq(sp) {
+        margin-bottom: 40px;
+        padding: 6px;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -21px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 22px 32px 0 32px;
+        border-color: #16981d transparent transparent transparent;
+        transform: translate(-50%,100%);
+        @include mixins.mq(sp) {
+          bottom: -14px;
+          border-width: 12px 24px 0 24px;
+        }
+      }
+      &:last-child{
+        margin-bottom: 0;
+        &::after{
+          display: none;
+        }
+      }
+      .inner{
+        display: flex;
+        align-items: center;
+        padding: 64px 64px 64px 0;
+        background: #ffffff;
+        @include mixins.mq(sp) {
+          display: block;
+          padding: 24px;
+        }
+      }
+      .num{
+        flex: 0 0 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: mixins.$eng2;
+        line-height: 1;
+        @include mixins.mq(sp) {
+          display: block;
+          margin-bottom: 10px;
+        }
+        small{
+          font-size: 1.6rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+          @include mixins.mq(sp) {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            margin-right: 5px;
+          }
+        }
+        b{
+          font-size: 6.4rem;
+          @include mixins.mq(sp) {
+            font-size: 2.4rem;
+          }
+        }
+      }
+      .body{
+        flex: 1 1 100%;
+        .hd{
+          font-size: 2.6rem;
+          font-weight: bold;
+          line-height: 1.6;
+          @include mixins.mq(sp) {
+            font-size: 2rem;
+          }
+        }
+        .txt{
+          margin-top: 10px;
+          @include mixins.mq(sp) {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+  system
+--------------------*/
+.support__system{
+  margin-top: 80px;
+  padding: 0 40px;
+  @include mixins.mq(sp) {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  &__title{
+    b{
+      color: #BFB8D0;
+    }
+  }
+  &__list{
+    margin-top: 40px;
+    @include mixins.mq(sp) {
+      margin-top: 24px;
+    }
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 56px;
+      @include mixins.mq(sp) {
+        display: block;
+        margin-bottom: 32px;
+      }
+      @include mixins.mq(pc) {
+        &:nth-child(odd){
+          flex-direction: row-reverse;
+          .img{
+            margin-left: 40px;
+          }
+        }
+        &:nth-child(even){
+          .img{
+            margin-right: 40px;
+          }
+        }
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .img{
+        flex: 0 0 45%;
+        max-width: 450px;
+        @include mixins.mq(sp) {
+          width: 90%;
+          margin: 0 auto 20px;
+        }
+      }
+      .body{
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
