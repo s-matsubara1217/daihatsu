@@ -18,6 +18,15 @@ $pay-beige: #f8ecdc;
       opacity: 0.58;
     }
   }
+  .innerWrap {
+    &.-sizeS {
+      max-width: 1080px;
+      padding: 0 40px;
+      @include mq(sp) {
+        padding: 0 20px;
+      }
+    }
+  }
   .requirementBtn{
     margin-top: 100px;
     margin-bottom: 120px;
@@ -38,22 +47,34 @@ $pay-beige: #f8ecdc;
   intro
 --------------------*/
 .pay__intro {
-  margin-top: 32px;
+  margin-top: 40px;
   .lead {
     font-size: 2.8rem;
+    @include mq(sp) {
+      font-size: 2.1rem;
+    }
   }
   table {
     width: 100%;
     border: 2px solid $pay-orange;
-    margin-top: 72px;
+    margin-top: 48px;
+    @include mq(sp) {
+      margin-top: 40px;
+    }
 
     tbody {
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
+      @include mq(sp) {
+        display: block;
+      }
     }
     tr {
       padding: 18px 24px;
+      @include mq(sp) {
+        padding: 0;
+      }
 
       &:first-child {
         flex: 0 0 22.5%;
@@ -61,6 +82,9 @@ $pay-beige: #f8ecdc;
         display: flex;
         justify-content: center;
         align-items: center;
+        @include mq(sp) {
+          height: 60px;
+        }
       }
       &:nth-child(2) {
         flex: 1 1 auto;
@@ -71,52 +95,89 @@ $pay-beige: #f8ecdc;
       color: #fff;
       font-size: 2rem;
       font-weight: 400;
+      @include mq(sp) {
+        font-size: 1.5rem;
+      }
       .num {
         font-size: 5.2rem;
         font-family: $eng2;
+        @include mq(sp) {
+          font-size: 4rem;
+        }
       }
     }
     td {
       display: block;
       width: 100%;
+      @include mq(sp) {
+        padding: 16px;
+      }
 
       .table__txt {
         font-size: 1.8rem;
+        @include mq(sp) {
+          font-size: 1.5rem;
+          text-align: left;
+          display: block;
+        }
       }
       .incomeWrap {
         display: flex;
         justify-content: center;
         align-items: center;
+        @include mq(sp) {
+          display: block;
+        }
       }
       .monthlyIncome {
         font-size: 1.8rem;
         color: $pay-orange;
+        @include mq(sp) {
+          margin-top: 20px;
+        }
         &__num {
           font-size: 5.7rem;
           font-family: $eng2;
           font-weight: 400;
           display: inline-block;
           margin: 0 4px;
+          @include mq(sp) {
+            line-height: 1;
+          }
         }
       }
       .dailyIncome {
         color: $pay-orange;
         font-size: 1.8rem;
         margin-top: 18px;
+        @include mq(sp) {
+          margin-top: 12px;
+        }
         &__num {
           font-size: 3rem;
           display: inline-block;
           margin: 0 4px;
+          @include mq(sp) {
+            line-height: 1;
+          }
         }
       }
       .table__annotation {
         font-size: 1.4rem;
+        @include mq(sp) {
+          font-size: 1.2rem;
+          display: block;
+          margin-top: 16px;
+        }
       }
     }
   }
   .desc {
     font-size: 1.4rem;
     margin-top: 28px;
+    @include mq(sp) {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -124,17 +185,22 @@ $pay-beige: #f8ecdc;
   point
 --------------------*/
 .pay__point {
-  .pay__point__content {
+  &__content {
     // 共通
-    margin-top: 100px;
+    margin-top: 88px;
+    @include mq(sp) {
+      margin-top: 52px;
+    }
     &:first-child {
-      margin-top: 64px;
+      margin-top: 80px;
+      @include mq(sp) {
+        margin-top: 52px;
+      }
     }
     .head {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-
 
       .num {
         width: 90px;
@@ -150,23 +216,51 @@ $pay-beige: #f8ecdc;
         font-family: $eng2;
         font-weight: bold;
         line-height: 1;
+        @include mq(sp) {
+          width: 58px;
+          height: 58px;
+        }
 
         small {
           margin-top: 8px;
+          font-size: 1.6rem;
+          @include mq(sp) {
+            font-size: 1rem;
+            margin-top: 6px;
+          }
         }
         b {
           font-size: 5rem;
+          @include mq(sp) {
+            font-size: 3rem;
+          }
         }
       }
       .ttl {
         font-size: 2.4rem;
         margin-left: 24px;
+        @include mq(sp) {
+          font-size: 1.8rem;
+          line-height: 1.6;
+          margin-left: 16px;
+        }
       }
     }
     .body {
       margin-top: 40px;
+      @include mq(sp) {
+        margin-top: 28px;
+      }
       > .desc {
         margin-top: 40px;
+        @include mq(sp) {
+          margin-top:24px;
+        }
+      }
+    }
+    .tableWrap {
+      @include mq(sp) {
+        overflow-x: auto;
       }
     }
     .table {
@@ -176,8 +270,17 @@ $pay-beige: #f8ecdc;
           background-color: $pay-orange;
           height: 72px;
           padding: 0 24px;
+          @include mq(sp) {
+            height: 40px;
+            padding: 0 16px;
+            font-size: 1.6rem;
+          }
           small {
             display: block;
+            @include mq(sp) {
+              font-size: 1.2rem;
+              margin-top: -4px;
+            }
           }
         }
         td {
@@ -189,6 +292,9 @@ $pay-beige: #f8ecdc;
           justify-content: center;
           align-items: center;
           color: $pay-orange;
+          @include mq(sp) {
+            height: 64px;
+          }
 
           .num {
             font-size: 3.8rem;
@@ -196,6 +302,9 @@ $pay-beige: #f8ecdc;
             font-weight: 400;
             display: inline-block;
             margin: 0 4px;
+            @include mq(sp) {
+              font-size: 3.2rem;
+            }
           }
           .txt {
             display: inline-block;
@@ -219,12 +328,21 @@ $pay-beige: #f8ecdc;
           &:first-child {
             width: 24%;
             margin-left: 0;
+            @include mq(sp) {
+              width: 150px;
+            }
           }
           &:nth-child(2) {
             width: 38%;
+            @include mq(sp) {
+              width: 150px;
+            }
           }
           &:nth-child(3) {
             width: 38%;
+            @include mq(sp) {
+              width: 160px;
+            }
           }
         }
 
@@ -236,6 +354,9 @@ $pay-beige: #f8ecdc;
           display: flex;
           justify-content: center;
           align-items: center;
+          @include mq(sp) {
+            font-size: 1.6rem;
+          }
         }
         td {
           height: 70px;
@@ -246,6 +367,9 @@ $pay-beige: #f8ecdc;
           background-color: $pay-beige;
           margin-top: 6px;
           color: $pay-orange;
+          @include mq(sp) {
+            font-size: 1.6rem;
+          }
 
           &:first-child {
             background-color: #f5d9cc;
@@ -257,6 +381,17 @@ $pay-beige: #f8ecdc;
             font-family: $eng2;
             display: inline-block;
             margin: 0 4px;
+            @include mq(sp) {
+              font-size: 2.8rem;
+              margin: 0 2px;
+            }
+          }
+          .txt {
+            display: inline-block;
+            margin-top: 8px;
+            @include mq(sp) {
+              margin-top: 6px;
+            }
           }
         }
       }
@@ -267,9 +402,20 @@ $pay-beige: #f8ecdc;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        @include mq(sp) {
+          display: block;
+        }
       }
       .table {
         margin-left: 6px;
+        @include mq(sp) {
+          margin-left: 0;
+          width: 100%;
+          margin-top: 24px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
         &:first-child {
           margin-left: 0;
         }
@@ -286,6 +432,9 @@ $pay-beige: #f8ecdc;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        @include mq(sp) {
+          display: block;
+        }
 
         &__item {
           width: 23%;
@@ -300,6 +449,16 @@ $pay-beige: #f8ecdc;
           border-radius: 18px;
           margin-left: 2.66%;
           position: relative;
+          @include mq(sp) {
+            width: 100%;
+            margin-top: 36px;
+            height: auto;
+            margin-left: 0;
+            padding: 16px 20px;
+            &:first-child {
+              margin-top: 0;
+            }
+          }
 
           &:after {
             content: '';
@@ -313,6 +472,12 @@ $pay-beige: #f8ecdc;
             right: -4px;
             top: 50%;
             transform: translate(100%,-50%);
+            @include mq(sp) {
+              top: auto;
+              bottom: -8px;
+              left: 50%;
+              transform: translate(-50%,100%);
+            }
           }
 
           .term {
@@ -334,6 +499,11 @@ $pay-beige: #f8ecdc;
               position: absolute;
               top: 0;
               left: 0;
+              @include mq(sp) {
+                width: 60%;
+                left: 50%;
+                transform: translateX(-50%);
+              }
             }
 
             .num {
@@ -347,6 +517,9 @@ $pay-beige: #f8ecdc;
               display: block;
               font-size: 1.1rem;
               line-height: 1.6;
+              @include mq(sp) {
+                margin-top: 4px;
+              }
             }
           }
 
@@ -364,6 +537,10 @@ $pay-beige: #f8ecdc;
             background-color: #e39e7d;
             padding-top: 0;
             justify-content: center;
+            @include mq(sp) {
+              padding-top: 16px;
+            }
+
             &:after {
               content: none;
             }
@@ -372,7 +549,24 @@ $pay-beige: #f8ecdc;
       }
     }
     &04 {
+      .table {
+        &.table02 {
+          th,
+          td {
+            &:first-child {
+              @include mq(sp) {
+                width: 200px;
+              }
+            }
+            &:nth-child(2) {
+              @include mq(sp) {
+                width: 200px;
+              }
+            }
 
+          }
+        }
+      }
     }
   }
 }
@@ -382,6 +576,9 @@ $pay-beige: #f8ecdc;
 --------------------*/
 .pay__illust-box {
   margin-top: 110px;
+  @include mq(sp) {
+    margin-top: 60px;
+  }
 
   .wrap {
     background-color: $pay-beige;
@@ -390,15 +587,29 @@ $pay-beige: #f8ecdc;
     align-items: flex-start;
     padding: 48px 5% 0;
     border-radius: 10px;
+    @include mq(sp) {
+      flex-direction: column-reverse;
+      padding: 36px 24px 0;
+      align-items: center;
+    }
 
     .illust {
       flex: 0 0 19.1%;
       max-width: 191px;
       margin-bottom: -6px;
       margin-right: 3%;
+      @include mq(sp) {
+        width: 128px;
+        margin-top: 36px;
+        margin-right: 0;
+      }
     }
     .desc {
       flex: 1 1 auto;
+      @include mq(sp) {
+        font-size: 1.6rem;
+        word-break: break-all;
+      }
     }
   }
 }

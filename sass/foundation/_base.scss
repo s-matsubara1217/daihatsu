@@ -286,3 +286,17 @@ a{
 	0%{transform: scale(1.15) rotate(0.00001deg);}
 	100%{transform: scale(1) rotate(0.00001deg);}
 }
+
+/* ============================================
+// 表示/非表示
+// ==========================================*/
+.u-pcOnly {
+	@include mixins.mq(sp) {
+		display: none;
+	}
+}
+.u-spOnly {
+	@include mixins.mq(pc) {
+		display: none;
+	}
+}
