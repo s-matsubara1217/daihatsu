@@ -4797,7 +4797,7 @@ body:not(.front-page) .com-header__sub-pc {
 }
 @media screen and (max-width: 834px) {
   .lower-pay .innerWrap.-sizeS {
-    padding: 0 20px;
+    padding: 0 18px;
   }
 }
 .lower-pay .requirementBtn {
@@ -4855,6 +4855,11 @@ body:not(.front-page) .com-header__sub-pc {
 @media screen and (max-width: 834px) {
   .pay__intro table tr {
     padding: 0;
+  }
+}
+@media all and (-ms-high-contrast: none) {
+  .pay__intro table tr {
+    display: block;
   }
 }
 .pay__intro table tr:first-child {
@@ -4973,7 +4978,6 @@ body:not(.front-page) .com-header__sub-pc {
   }
 }
 .pay__intro .desc {
-  font-size: 1.4rem;
   margin-top: 28px;
 }
 @media screen and (max-width: 834px) {
@@ -5077,26 +5081,40 @@ body:not(.front-page) .com-header__sub-pc {
     overflow-x: auto;
   }
 }
+.pay__point__content .table01 {
+  display: block;
+}
+.pay__point__content .table01 tbody,
+.pay__point__content .table01 tr {
+  display: block;
+  width: 100%;
+}
 .pay__point__content .table01 th {
   color: #fff;
   background-color: #E3594D;
   height: 72px;
   padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 @media screen and (max-width: 834px) {
   .pay__point__content .table01 th {
-    height: 40px;
+    height: 44px;
     padding: 0 16px;
     font-size: 1.6rem;
   }
 }
 .pay__point__content .table01 th small {
   display: block;
+  font-size: 1.4rem;
+  margin-top: -4px;
 }
 @media screen and (max-width: 834px) {
   .pay__point__content .table01 th small {
     font-size: 1.2rem;
-    margin-top: -4px;
   }
 }
 .pay__point__content .table01 td {

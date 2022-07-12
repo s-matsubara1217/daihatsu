@@ -23,7 +23,7 @@ $pay-beige: #f8ecdc;
       max-width: 1080px;
       padding: 0 40px;
       @include mq(sp) {
-        padding: 0 20px;
+        padding: 0 18px;
       }
     }
   }
@@ -74,6 +74,9 @@ $pay-beige: #f8ecdc;
       padding: 18px 24px;
       @include mq(sp) {
         padding: 0;
+      }
+      @media all and (-ms-high-contrast: none) {
+        display: block;
       }
 
       &:first-child {
@@ -173,7 +176,6 @@ $pay-beige: #f8ecdc;
     }
   }
   .desc {
-    font-size: 1.4rem;
     margin-top: 28px;
     @include mq(sp) {
       margin-top: 20px;
@@ -265,21 +267,34 @@ $pay-beige: #f8ecdc;
     }
     .table {
       &01 {
+        display: block;
+        tbody,
+        tr {
+          display: block;
+          width: 100%;
+        }
         th {
           color: #fff;
           background-color: $pay-orange;
           height: 72px;
           padding: 0 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+
           @include mq(sp) {
-            height: 40px;
+            height: 44px;
             padding: 0 16px;
             font-size: 1.6rem;
           }
           small {
             display: block;
+            font-size: 1.4rem;
+            margin-top: -4px;
             @include mq(sp) {
               font-size: 1.2rem;
-              margin-top: -4px;
             }
           }
         }
